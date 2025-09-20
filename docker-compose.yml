@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    env_file: .env
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    volumes:
+      - ./app/data:/app/app/data:ro
+      - ./keys:/run/keys:ro
+    restart: unless-stopped

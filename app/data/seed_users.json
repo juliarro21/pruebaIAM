@@ -1,0 +1,11 @@
+[
+  {"userName":"jdoe","name":{"givenName":"John","familyName":"Doe"},"active":true,
+   "emails":[{"value":"jdoe@example.com","primary":true}],
+   "groups":["HR_READERS"],"dept":"HR","riskScore":20},
+  {"userName":"agonzalez","name":{"givenName":"Ana","familyName":"Gonzalez"},"active":true,
+   "emails":[{"value":"agonzalez@example.com","primary":true}],
+   "groups":["FIN_APPROVERS"],"dept":"Finance","riskScore":30},
+  {"userName":"mrios","name":{"givenName":"Mario","familyName":"Rios"},"active":false,
+   "emails":[{"value":"mrios@example.com","primary":true}],
+   "groups":["ADMINS"],"dept":"IT","riskScore":15}
+]

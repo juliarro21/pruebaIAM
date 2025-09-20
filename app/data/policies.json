@@ -1,0 +1,9 @@
+[
+  {"id":"HR-Payroll-01","effect":"Permit",
+   "when":{"subject.dept":"HR","resource.type":"payroll","context.deviceTrusted":true}},
+  {"id":"Risk-StepUp-01","effect":"Challenge",
+   "whenAny":[{"subject.riskScore>=":70},{"context.geoNotIn":["CL","CO"]}]},
+  {"id":"Admins-NonProd-01","effect":"Permit",
+   "when":{"subject.groups~":"ADMINS","resource.env!=":"prod"},
+   "else":{"effect":"Challenge"}}
+]
