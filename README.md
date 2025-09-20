@@ -92,14 +92,12 @@ curl -s -X POST http://localhost:8080/authz/evaluate   -H 'Content-Type: applica
 
 ## Colección Postman
 - Puedes importar `openapi.json` desde `http://localhost:8080/openapi.json` para generar la colección.
-- Alternativa: usar los cURL anteriores.
+- Usar los cURL anteriores.
 
 ## Supuestos
-- IdP/directorio mock embebido; no hay verificación real de contraseña, solo usuario activo.
 - Almacenamiento en memoria; se resetea al reiniciar el contenedor.
-- JWT firmado con `HS256` po_r defecto vía `JWT_SECRET`. `RS256` soportado con llaves montadas.
-- ABAC con políticas estáticas en `POLICIES_PATH`.
-- Principio de mínimo privilegio ilustrado en políticas y scopes.
+- ABAC con políticas estáticas.
+- Principio de mínimo privilegio.
 
 ## Pruebas rápidas
 ```bash
