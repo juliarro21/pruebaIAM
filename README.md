@@ -6,6 +6,7 @@
 
 ## Variables de entorno: se encuentran en .env.example
 
+```
 APP_PORT=8080
 JWT_ALG=HS256
 JWT_SECRET=change_me
@@ -13,6 +14,7 @@ JWT_PRIVATE_KEY_PATH=/run/keys/jwtRS256.key
 JWT_PUBLIC_KEY_PATH=/run/keys/jwtRS256.key.pub
 SEED_USERS_PATH=/app/app/data/seed_users.json
 POLICIES_PATH=/app/app/data/policies.json
+```
 
 ## Cómo ejecutar (Docker)
 ```bash
