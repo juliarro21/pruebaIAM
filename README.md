@@ -3,11 +3,9 @@
 ## Pre-requisitos
 - Docker + Docker Compose v2
 - Bash, `curl` y `jq`
-- (Opcional) OpenSSL si usas RS256
 
-## Variables de entorno
-Ejemplo (`.env.example`):
-```
+## Variables de entorno: se encuentran en .env.example
+
 APP_PORT=8080
 JWT_ALG=HS256
 JWT_SECRET=change_me
@@ -15,13 +13,6 @@ JWT_PRIVATE_KEY_PATH=/run/keys/jwtRS256.key
 JWT_PUBLIC_KEY_PATH=/run/keys/jwtRS256.key.pub
 SEED_USERS_PATH=/app/app/data/seed_users.json
 POLICIES_PATH=/app/app/data/policies.json
-CLIENT_ID=demo
-CLIENT_SECRET=demo123
-JWT_EXP_SECONDS=3600
-```
-Notas:
-- `JWT_ALG`: `HS256` por defecto. Para `RS256`, provee llaves y monta `./keys` en `/run/keys`.
-- `SEED_USERS_PATH` y `POLICIES_PATH` apuntan a archivos en `app/data/`.
 
 ## Cómo ejecutar (Docker)
 ```bash
@@ -35,20 +26,19 @@ docker compose up -d --build
 
 # Verificación
 curl -s http://localhost:8080/health
-# Docs OpenAPI: http://localhost:8080/docs
-```
+
 
 ## Endpoints
 - SCIM Users:
-  - `POST /scim/v2/Users`
-  - `GET /scim/v2/Users/{id}`
-  - `PATCH /scim/v2/Users/{id}`
-  - `GET /scim/v2/Users?filter=userName eq "..."`  
+  - POST /scim/v2/Users
+  - GET /scim/v2/Users/{id}
+  - PATCH /scim/v2/Users/{id}
+  - GET /scim/v2/Users?filter=userName eq 
 - Auth:
-  - `POST /auth/token` (`password` | `client_credentials`)
-  - `GET /auth/me`
+  - POST /auth/token` (`password` | `client_credentials`)
+  - GET /auth/me
 - ABAC:
-  - `POST /authz/evaluate`
+  - POST /authz/evaluate
 
 ## Ejemplos cURL
 
